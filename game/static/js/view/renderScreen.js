@@ -10,13 +10,17 @@ const colors = {
     }
 }
 const border = 20
-import {playerSize} from "../core/Player.js";
+import { playerSize } from "../core/Player.js";
+import { screen } from "./script.js";
 export const screenSize = {
     width: 4096,
     height: 2304
 }
-export function renderScreen(screen, game, currentPlayerId, requestAnimationFrame) {
+
+export function renderScreen(game, requestAnimationFrame) {
+
     const context = screen.getContext("2d")
+    const currentPlayerId = game.currentPlayerId
 
     context.clearRect(0, 0, screen.width, screen.height)
     const image = new Image()

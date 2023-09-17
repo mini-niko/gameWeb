@@ -34,7 +34,7 @@ export class KeyboardListener {
             this.notifyAll(command)
             setTimeout(() =>{
                 this.state.clicked = false
-            }, 70)
+            }, 50)
         }
     }
 

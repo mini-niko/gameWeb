@@ -7,7 +7,8 @@ export class Game {
             players: {
 
             },
-            gamemode: null
+            gamemode: null,
+            currentPlayerId: null
         }
     }
 
