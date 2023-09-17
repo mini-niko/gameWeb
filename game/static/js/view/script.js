@@ -1,17 +1,11 @@
-import { Game } from "../core/Game.js";
-import { KeyboardListener } from "../input/KeyboardListener.js";
-import { renderScreen } from "./renderScreen.js";
-import { screenSize } from "./renderScreen.js";
-import { ButtonListener } from "../input/ButtonListener.js";
-import { startSocket } from "../network/sockets.js";
+import { renderScreen, screenSize } from "./renderScreen.js";
+import { startSocket } from "../network/socket.js"
 
-export const screen = document.getElementById("screen")
+const screen = document.getElementById("screen")
+const context = screen.getContext("2d")
 screen.height = screenSize.height
 screen.width = screenSize.width
 
-export const game = new Game();
-export const keyboardListener = new KeyboardListener()
-export const buttonListener = new ButtonListener()
 export const socket = io()
 
-startSocket()
+startSocket(context)

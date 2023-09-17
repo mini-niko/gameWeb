@@ -9,20 +9,17 @@ const colors = {
         runner: "green"
     }
 }
-const border = 20
 import { playerSize } from "../core/Player.js";
-import { screen } from "./script.js";
+
 export const screenSize = {
     width: 4096,
     height: 2304
 }
+const border = 20
 
-export function renderScreen(game, requestAnimationFrame) {
+export function renderScreen(context, game, currentPlayerId) {
 
-    const context = screen.getContext("2d")
-    const currentPlayerId = game.currentPlayerId
-
-    context.clearRect(0, 0, screen.width, screen.height)
+    context.clearRect(0, 0, screenSize.width, screenSize.height)
     const image = new Image()
     image.src = "../../images/avatar.png"
 
@@ -49,5 +46,5 @@ export function renderScreen(game, requestAnimationFrame) {
         //context.fillRect(player.x, player.y, 32, 32)
     }
 
-    requestAnimationFrame(() => { renderScreen(screen, game, currentPlayerId, requestAnimationFrame)})
+    requestAnimationFrame(() => { renderScreen(context, game, currentPlayerId)})
 }

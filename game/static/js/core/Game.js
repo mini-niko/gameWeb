@@ -8,7 +8,6 @@ export class Game {
 
             },
             gamemode: null,
-            currentPlayerId: null
         }
     }
 
@@ -140,6 +139,7 @@ export class Game {
     setGamemode(command) {
         this.notifyAll(command)
         const thisGame = this
+
         const buttonsGamemodesFunction = {
             activeHunter() {
                 if (thisGame.gamemode != "hunter") {
