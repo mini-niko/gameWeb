@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#screen {
+    background-color: darkgray;
+    border: 10px solid black;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    width: 1536px;
+}
+
+#buttons {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#buttons button {
+    background-color: lightgray;
+    font-size: 40px;
+    font-weight: bold;
+    border: 10px solid black;
+    width: 400px;
+    transition: 40ms;
+}
+#buttons button:hover {
+    cursor: pointer;
+    background-color: grey;
+    transform: scale(1.05);
+}
+#buttons button:active {
+     background-color: grey;
+     transform: scale(0.97);
+ }
